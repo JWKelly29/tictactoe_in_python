@@ -17,3 +17,6 @@ class Board():
     def setMarkBoard(self,mark,position):
         self.gameBoard()[position] = mark
         return self.gameBoard()
+
+    def isCellOccupied(self,position):
+        return True if self.gameBoard()[position] != ' ' else False

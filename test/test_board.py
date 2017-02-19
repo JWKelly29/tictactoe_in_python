@@ -14,5 +14,14 @@ class TestBoard(unittest.TestCase):
         self.board.setMarkBoard("X",3)
         self.assertEqual(self.board.gameBoard()[3], "X")
 
+    def test_board_isCellOccupied_method_returns_true_if_cell_occupied(self):
+        self.board.setMarkBoard("X",3)
+        self.assertEqual(self.board.isCellOccupied(3), True)
+
+    def test_board_isCellOccupied_method_returns_false_if_cell_not_occupied(self):
+        self.assertEqual(self.board.isCellOccupied(3), False)
+
+
+
 if __name__ == '__main__':
     unittest.main()
