@@ -11,7 +11,9 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.board.gameBoard(), empty_board)
 
     def test_printboard_prints_empty_board_if_no_turns_have_been_taken(self):
-        print_board =   "' ' | ' ' | ' '' ' | ' ' | ' '' ' | ' ' | ' '"
+        print_board =   '  |   |  \n  |   |  \n  |   |  '
+        self.assertEqual(self.board.printBoard(), print_board)
+
 
 if __name__ == '__main__':
     unittest.main()
