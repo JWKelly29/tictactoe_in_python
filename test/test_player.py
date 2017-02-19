@@ -14,6 +14,8 @@ class TestPlayer(unittest.TestCase):
     def test_getMarker_returns_marker(self):
         self.assertEqual(self.player.getMarker(), "X")
 
-        
+    def test_setMarker_may_not_be_set_to_anything_other_than_X_or_O(self):
+        self.assertRaises(ValueError, self.player.setMarker,"Z")
+
 if __name__ == '__main__':
     unittest.main()
