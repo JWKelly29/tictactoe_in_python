@@ -17,19 +17,11 @@ class Game():
         player2_name = input(" : ")
         self.player2.setName(player2_name)
         print("Here is the board. Each cell of the grid is represented by the numbers 1 - 9 going from left to right, top to bottom.")
+        self.turn = True
 
 
-    def takeTurn(self, mark):
-        print("Choose a place to put your mark")
-        position = int(input)
-        try:
-            if position > 9 or position < 1:
-                raise Exception
-        except:
-            print('Pick a number between 1-9')
-            return self.takeTurn(mark)
-
-        self.boardControl.setMarkBoard(mark, position)
+    def takeTurn(self, mark, input_given):
+        self.boardControl.setMarkBoard(mark, input_given)
         self.boardControl.printBoard()
 
     def is_game_won(self):
@@ -37,3 +29,29 @@ class Game():
         for win_cond in win_conds:
             if self.gameBoard[win_cond[0]] == self.gameBoard[win_cond[1]] and self.gameBoard[win_cond[1]] == self.gameBoard[win_cond[2]] and self.gameBoard[win_cond[0]]!= ' ':
                 return True
+
+    def main(self):
+        self.gameActive = True
+        self.startGame()
+        self.game_active_loop()
+
+    def check_input_between_1_and_9(self, input_given):
+        try:
+            if input_given > 9 or input_given < 1:
+                raise Exception
+        except:
+            print('Pick a number between 1-9')
+            return self.game_active_loop()
+
+    def game_active_loop(self):
+        while self.gameActive:
+            if self.player1_turn == True:
+                print("Choose a place to put your mark")
+                position = int(input)
+                self.check_input_between_1_and_9()
+                self.takeTurn(self.player1.getMarker, position)
+            else:
+                print("Choose a place to put your mark")
+                position = int(input)
+                self.check_input_between_1_and_9()
+                self.takeTurn(self.player2.getMarker, position)

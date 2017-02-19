@@ -17,3 +17,9 @@ class TestGame(unittest.TestCase):
         self.game.boardControl.setMarkBoard("X",2)
         self.game.boardControl.setMarkBoard("X",3)
         self.assertEqual(self.game.is_game_won(), True)
+
+    def test_game_can_take_turn(self):
+        self.game.takeTurn("X",2)
+        self.assertEqual(self.game.gameBoard, {1:' ' , 2: "X", 3: ' ', 4:' ',  5:' ',  6:' ',  7:' ',  8:' ',  9:' '})
+
+    
