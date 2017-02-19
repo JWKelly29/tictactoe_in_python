@@ -10,3 +10,5 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(self.game.player1, 'O')
         self.assertEqual(self.game.player2, 'X')
         self.assertEqual(self.game.gameBoard, {1:' ' , 2: ' ', 3: ' ', 4:' ',  5:' ',  6:' ',  7:' ',  8:' ',  9:' '})
+
+    
