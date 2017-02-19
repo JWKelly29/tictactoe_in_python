@@ -13,3 +13,7 @@ class Board():
         print(self.board[1] + " | " + self.board[2] + " | " + self.board[3])
         print(self.board[4] + " | " + self.board[5] + " | " + self.board[6])
         print(self.board[7] + " | " + self.board[8] + " | " + self.board[9])
+
+    def setMarkBoard(self,mark,position):
+        self.gameBoard()[position] = mark
+        return self.gameBoard()

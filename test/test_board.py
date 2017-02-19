@@ -10,7 +10,9 @@ class TestBoard(unittest.TestCase):
         empty_board = {1:' ' , 2: ' ', 3: ' ', 4:' ',  5:' ',  6:' ',  7:' ',  8:' ',  9:' '}
         self.assertEqual(self.board.gameBoard(), empty_board)
 
-
+    def test_setMarkBoard_puts_X_on_board(self):
+        self.board.setMarkBoard("X",3)
+        self.assertEqual(self.board.gameBoard()[3], "X")
 
 if __name__ == '__main__':
     unittest.main()
