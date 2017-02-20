@@ -3,17 +3,17 @@ class Player():
     def __init__(self):
         self.name = "Computer"
 
-    def setName(self, name):
+    def set_name(self, name):
         self.name = name
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
-    def setMarker(self, mark):
+    def set_marker(self, mark):
         if mark == ("X" or "O"):
             self.mark = mark
         else:
             raise ValueError
 
-    def getMarker(self):
+    def get_marker(self):
         return self.mark
