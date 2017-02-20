@@ -31,3 +31,14 @@ Simple multiplayer TicTacToe game built using python. The program was built in o
 - In the terminal, install nosetests by entering the command `pip install nose`.
 
 - In the terminal, enter the command `nosetests`.
+
+#Possible future additions
+
+- Adding the option to play a computer opponent.
+
+- Use a minmax algorithm to make the computer opponent unbeatable.
+
+- Adding mocks and stubs to tests.
+
+- Adding integration tests.
+
