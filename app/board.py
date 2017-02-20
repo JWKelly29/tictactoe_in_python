@@ -12,10 +12,10 @@ class Board():
         return self.board
 
     def print_board(self):
-        print(self.board[1] + " | " + self.board[2] + " | " + self.board[3])
-        print(self.board[4] + " | " + self.board[5] + " | " + self.board[6])
-        print(self.board[7] + " | " + self.board[8] + " | " + self.board[9])
-
+        print(str(self.board[1]) + " | " + str(self.board[2]) + " | " + str(self.board[3]))
+        print(str(self.board[4]) + " | " + str(self.board[5]) + " | " + str(self.board[6]))
+        print(str(self.board[7]) + " | " + str(self.board[8]) + " | " + str(self.board[9]))
+        
     def set_mark_board(self,mark,position):
         self.game_board()[position] = mark
         return self.game_board()
