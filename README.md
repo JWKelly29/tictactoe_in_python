@@ -6,7 +6,7 @@ Simple multiplayer TicTacToe game built using python. The program was built in o
 
 #How to setup the project on your Computer
 
-*Assuming you have a OSx*
+*Assuming you have OS X*
 
 - In the terminal, enter the command `git clone https://github.com/JWKelly29/tictactoe_in_python.git`. This will create a copy of this project.
 
