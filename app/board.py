@@ -3,6 +3,8 @@
 
 class Board():
 
+    EMPTY = ' '
+
     def __init__(self):
         self.board = {1:' ' , 2: ' ', 3: ' ', 4:' ',  5:' ',  6:' ',  7:' ',  8:' ',  9:' '}
 
@@ -19,4 +21,10 @@ class Board():
         return self.gameBoard()
 
     def isCellOccupied(self,position):
-        return True if self.gameBoard()[position] != ' ' else False
+        return True if self.gameBoard()[position] != self.EMPTY else False
+
+    def isBoardFull(self):
+        for index in range(1, 10):
+            if self.gameBoard()[index] == ' ':
+                return False
+        return True
