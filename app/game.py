@@ -26,6 +26,9 @@ class Game():
             self.game_active_loop()
         self.board_control.set_mark_board(mark, input_given)
         self.board_control.print_board()
+        if self.is_game_won():
+            self.game_active = False
+            return "You Win!"
 
     def is_game_won(self):
         win_conds = ((1,2,3), (4,5,6), (7,8,9), (1,4,7), (2,5,8), (3,6,9), (1,5,9), (3,5,7))
@@ -62,3 +65,5 @@ class Game():
             if self.board_control.is_board_full():
                 print("Its a draw!! You both lose!")
                 self.game_active = False
+
+            self.player1_turn = False
