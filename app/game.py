@@ -21,6 +21,9 @@ class Game():
 
 
     def take_turn(self, mark, input_given):
+        if self.board_control.is_cell_occupied(input_given):
+            print("That place is taken")
+            self.game_active_loop()
         self.board_control.set_mark_board(mark, input_given)
         self.board_control.print_board()
 
@@ -55,3 +58,7 @@ class Game():
                 position = int(input)
                 self.check_input_between_1_and_9()
                 self.takeTurn(self.player2.getMarker, position)
+
+            if self.board_control.is_board_full():
+                print("Its a draw!! You both lose!")
+                self.game_active = False
